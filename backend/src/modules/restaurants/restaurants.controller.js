@@ -12,7 +12,7 @@ async function createRestaurant(req, res) {
       `INSERT INTO restaurants (name, email, password)
             VALUES($1, $2, $3)
             RETURNING id, name, email`,
-      [name, email, password],
+      [name, email, hashedPassword],
     );
 
     res.status(201).json(result.rows[0]);
