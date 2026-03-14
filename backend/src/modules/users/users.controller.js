@@ -9,7 +9,7 @@ async function createUsers(req, res) {
 
     const result = await pool.query(
       `INSERT INTO users (name, email, password, restaurant_id)
-            VALUES ($1, $2, $3, 4$)
+            VALUES ($1, $2, $3, $4)
             RETURNING id, name, email`,
       [name, email, hashedPassword, restaurant_id],
     );
