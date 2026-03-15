@@ -6,5 +6,3 @@ const { createTable } = require("./tables.controller.js");
 router.post("/", createTable);
 
 module.exports = router;
-
-c

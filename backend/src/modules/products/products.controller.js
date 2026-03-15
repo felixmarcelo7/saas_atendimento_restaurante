@@ -6,7 +6,8 @@ async function createProduct(req, res) {
   try {
     const result = await pool.query(
       `INSERT INTO products(name, price, restaurant_id)
-            VALUES($1, $2, $3)`,
+            VALUES($1, $2, $3)
+            RETURNING *`,
       [name, price, restaurant_id],
     );
 
