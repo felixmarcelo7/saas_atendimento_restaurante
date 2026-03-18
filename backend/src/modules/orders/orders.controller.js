@@ -10,7 +10,7 @@ async function createOrder(req, res) {
     await client.query("BEGIN"); //isso inicia a transação no banco
 
     const orderResult = await client.query(
-      `INSERT INTO ordes(table_id, user_id, restaurant_id)
+      `INSERT INTO orders(table_id, user_id, restaurant_id)
             VALUES($1, $2, $3)
             RETURNING *`,
       [table_id, user_id, restaurant_id],

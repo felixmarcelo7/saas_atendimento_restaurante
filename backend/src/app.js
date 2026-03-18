@@ -5,6 +5,7 @@ const authRoutes = require("./modules/auth/auth.routes.js");
 const usersRoutes = require("./modules/users/users.routes.js");
 const tablesRoutes = require("./modules/tables/tables.routes.js");
 const productsRoutes = require("./modules/products/products.routes.js");
+const ordersRoutes = require("./modules/orders/orders.routes.js");
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use("/auth", authRoutes);
 app.use("/users", usersRoutes);
 app.use("/tables", tablesRoutes);
 app.use("/products", productsRoutes);
+app.use("/orders", ordersRoutes);
 
 app.get("/", (req, res) => {
   res.json({ message: "API atendimento SaaS rodando" });
